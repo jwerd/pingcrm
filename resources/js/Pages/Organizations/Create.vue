@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     store() {
-      this.form.post('/organizations')
+      this.form.post(route('organizations'))
     },
   },
 }

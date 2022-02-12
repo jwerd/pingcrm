@@ -108,16 +108,16 @@ export default {
   },
   methods: {
     update() {
-      this.form.put(`/organizations/${this.organization.id}`)
+      this.form.put(route('organizations.update', this.organization.id))
     },
     destroy() {
       if (confirm('Are you sure you want to delete this organization?')) {
-        this.$inertia.delete(`/organizations/${this.organization.id}`)
+        this.$inertia.delete(route('organizations.destroy', this.organization.id))
       }
     },
     restore() {
       if (confirm('Are you sure you want to restore this organization?')) {
-        this.$inertia.put(`/organizations/${this.organization.id}/restore`)
+        this.$inertia.put(route('organizations.restore', this.organization.id))
       }
     },
   },
