@@ -11,7 +11,7 @@
           <option value="only">Only Trashed</option>
         </select>
       </search-filter>
-      <Link class="btn-indigo" href="/organizations/create">
+      <Link class="btn-indigo" :href="route('organizations.create')">
         <span>Create</span>
         <span class="hidden md:inline">&nbsp;Organization</span>
       </Link>
@@ -34,17 +34,17 @@
               </Link>
             </td>
             <td class="border-t">
-              <Link class="flex items-center px-6 py-4" :href="`/organizations/${organization.id}/edit`" tabindex="-1">
+              <Link class="flex items-center px-6 py-4" :href="route('organizations.edit', organization.id)" tabindex="-1">
                 {{ organization.city }}
               </Link>
             </td>
             <td class="border-t">
-              <Link class="flex items-center px-6 py-4" :href="`/organizations/${organization.id}/edit`" tabindex="-1">
+              <Link class="flex items-center px-6 py-4" :href="route('organizations.edit', organization.id)" tabindex="-1">
                 {{ organization.phone }}
               </Link>
             </td>
             <td class="w-px border-t">
-              <Link class="flex items-center px-4" :href="`/organizations/${organization.id}/edit`" tabindex="-1">
+              <Link class="flex items-center px-4" :href="route('organizations.edit', organization.id)" tabindex="-1">
                 <icon name="cheveron-right" class="block w-6 h-6 fill-gray-400" />
               </Link>
             </td>
@@ -94,7 +94,7 @@ export default {
     form: {
       deep: true,
       handler: throttle(function () {
-        this.$inertia.get('/organizations', pickBy(this.form), { preserveState: true })
+        this.$inertia.get(route('organizations'), pickBy(this.form), { preserveState: true })
       }, 150),
     },
   },

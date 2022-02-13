@@ -2,7 +2,7 @@
   <div>
     <Head title="Create Organization" />
     <h1 class="mb-8 text-3xl font-bold">
-      <Link class="text-indigo-400 hover:text-indigo-600" href="/organizations">Organizations</Link>
+      <Link class="text-indigo-400 hover:text-indigo-600" :href="route('organizations')">Organizations</Link>
       <span class="text-indigo-400 font-medium">/</span> Create
     </h1>
     <div class="max-w-3xl bg-white rounded-md shadow overflow-hidden">

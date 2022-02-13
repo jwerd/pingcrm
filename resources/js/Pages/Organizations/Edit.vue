@@ -2,7 +2,7 @@
   <div>
     <Head :title="form.name" />
     <h1 class="mb-8 text-3xl font-bold">
-      <Link class="text-indigo-400 hover:text-indigo-600" href="/organizations">Organizations</Link>
+      <Link class="text-indigo-400 hover:text-indigo-600" :href="route('organizations')">Organizations</Link>
       <span class="text-indigo-400 font-medium">/</span>
       {{ form.name }}
     </h1>
@@ -39,23 +39,23 @@
         </tr>
         <tr v-for="contact in organization.contacts" :key="contact.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
           <td class="border-t">
-            <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/contacts/${contact.id}/edit`">
+            <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="route('contacts.edit', contact.id)">
               {{ contact.name }}
               <icon v-if="contact.deleted_at" name="trash" class="flex-shrink-0 ml-2 w-3 h-3 fill-gray-400" />
             </Link>
           </td>
           <td class="border-t">
-            <Link class="flex items-center px-6 py-4" :href="`/contacts/${contact.id}/edit`" tabindex="-1">
+            <Link class="flex items-center px-6 py-4" :href="route('contacts.edit', contact.id)" tabindex="-1">
               {{ contact.city }}
             </Link>
           </td>
           <td class="border-t">
-            <Link class="flex items-center px-6 py-4" :href="`/contacts/${contact.id}/edit`" tabindex="-1">
+            <Link class="flex items-center px-6 py-4" :href="route('contacts.edit', contact.id)" tabindex="-1">
               {{ contact.phone }}
             </Link>
           </td>
           <td class="w-px border-t">
-            <Link class="flex items-center px-4" :href="`/contacts/${contact.id}/edit`" tabindex="-1">
+            <Link class="flex items-center px-4" :href="route('contacts.edit', contact.id)" tabindex="-1">
               <icon name="cheveron-right" class="block w-6 h-6 fill-gray-400" />
             </Link>
           </td>
